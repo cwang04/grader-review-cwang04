@@ -10,7 +10,6 @@ echo 'Finished cloning'
 
 filepath='student-submission/ListExamples.java'
 
-
 if [[ -f $filepath ]]
 then
     cp $filepath ./grading-area
@@ -29,6 +28,7 @@ then
 fi
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > grades.txt
 
+num=3
 score="$(($num-$(grep -c "failure:" grades.txt)))"
 echo "Your score is: " $score "/" $num 
 # Draw a picture/take notes on the directory structure that's set up after
